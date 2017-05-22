@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @audiobook.title %>
+</p>
+
+<p>
+  <strong>Author:</strong>
+  <%= @audiobook.author %>
+</p>
+
+<p>
+  <strong>Pdf:</strong>
+  <%= @audiobook.pdf %>
+</p>
+
+<%= link_to 'Edit', edit_audiobook_path(@audiobook) %> |
+<%= link_to 'Back', audiobooks_path %>

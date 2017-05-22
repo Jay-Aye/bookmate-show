@@ -1,0 +1,32 @@
+<%= form_with(model: audiobook, local: true) do |form| %>
+  <% if audiobook.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(audiobook.errors.count, "error") %> prohibited this audiobook from being saved:</h2>
+
+      <ul>
+      <% audiobook.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title, id: :audiobook_title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :author %>
+    <%= form.text_field :author, id: :audiobook_author %>
+  </div>
+
+  <div class="field">
+    <%= form.label :pdf %>
+    <%= form.file_field :pdf, id: :audiobook_pdf %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

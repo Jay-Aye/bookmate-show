@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Audiobooks</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Author</th>
+      <th>Pdf</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @audiobooks.each do |audiobook| %>
+      <tr>
+        <td><%= audiobook.title %></td>
+        <td><%= audiobook.author %></td>
+        <td><%= audiobook.pdf %></td>
+        <td><%= link_to 'Show', audiobook %></td>
+        <td><%= link_to 'Edit', edit_audiobook_path(audiobook) %></td>
+        <td><%= link_to 'Destroy', audiobook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Audiobook', new_audiobook_path %>
